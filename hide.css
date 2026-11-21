@@ -1,0 +1,32 @@
+/* ===== SHORTS (activo cuando html[data-cy-shorts]) ===== */
+html[data-cy-shorts] ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html[data-cy-shorts] ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+html[data-cy-shorts] ytd-mini-guide-entry-renderer:has(a[title="Shorts"]),
+html[data-cy-shorts] ytd-rich-shelf-renderer[is-shorts],
+html[data-cy-shorts] ytd-reel-shelf-renderer,
+html[data-cy-shorts] grid-shelf-view-model:has(a[href^="/shorts/"]),
+html[data-cy-shorts] ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+html[data-cy-shorts] ytd-video-renderer:has(a[href^="/shorts/"]),
+html[data-cy-shorts] ytd-grid-video-renderer:has(a[href^="/shorts/"]),
+html[data-cy-shorts] ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+html[data-cy-shorts] ytd-compact-video-renderer:has(a[href^="/shorts/"]),
+html[data-cy-shorts] yt-lockup-view-model:has(a[href^="/shorts/"]),
+html[data-cy-shorts] ytm-shorts-lockup-view-model,
+html[data-cy-shorts] ytm-shorts-lockup-view-model-v2,
+html[data-cy-shorts] yt-tab-shape[tab-title="Shorts"],
+html[data-cy-shorts] yt-chip-cloud-chip-renderer:has(a[href="/shorts"]) {
+  display: none !important;
+}
+
+/* ===== VÍDEOS SOLO PARA MIEMBROS (activo cuando html[data-cy-members]) ===== */
+/* Selector por clase de insignia (rápido, sin JS) */
+html[data-cy-members] ytd-video-renderer:has(.badge-style-type-members-only),
+html[data-cy-members] ytd-grid-video-renderer:has(.badge-style-type-members-only),
+html[data-cy-members] ytd-rich-item-renderer:has(.badge-style-type-members-only),
+html[data-cy-members] ytd-compact-video-renderer:has(.badge-style-type-members-only),
+html[data-cy-members] ytd-playlist-video-renderer:has(.badge-style-type-members-only),
+html[data-cy-members] yt-lockup-view-model:has(.badge-style-type-members-only),
+/* Marcados por content.js al detectar el texto de la insignia (cualquier idioma) */
+html[data-cy-members] [data-cy-members-item] {
+  display: none !important;
+}

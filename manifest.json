@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Clean YouTube: sin Shorts ni vídeos de miembros",
+  "short_name": "Clean YouTube",
+  "version": "1.1.0",
+  "description": "Oculta los YouTube Shorts y los vídeos exclusivos para miembros. Redirige los enlaces de Shorts al reproductor normal.",
+  "author": "Rubén",
+  "homepage_url": "https://github.com/TU_USUARIO/clean-youtube",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_icon": {
+      "48": "icons/icon-48.png"
+    },
+    "default_title": "Clean YouTube",
+    "default_popup": "popup/popup.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "clean-youtube@ruben.dev",
+      "strict_min_version": "121.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*", "*://m.youtube.com/*"],
+      "css": ["hide.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
